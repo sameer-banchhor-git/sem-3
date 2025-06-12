@@ -93,9 +93,9 @@ const NodeDisplay: React.FC<{ node: HierarchicalContentNode; level: number }> = 
                 <span>Generating explanation...</span>
               </div>
             ) : (
-              <AlertDialogDescription className="max-h-[60vh] overflow-y-auto whitespace-pre-line">
+              <div className="text-sm text-muted-foreground max-h-[60vh] overflow-y-auto whitespace-pre-line py-4">
                 {alertContent}
-              </AlertDialogDescription>
+              </div>
             )}
           </AlertDialogHeader>
           <AlertDialogFooter>

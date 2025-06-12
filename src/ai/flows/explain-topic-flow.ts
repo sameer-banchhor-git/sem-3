@@ -17,7 +17,7 @@ const ExplainTopicInputSchema = z.object({
 export type ExplainTopicInput = z.infer<typeof ExplainTopicInputSchema>;
 
 const ExplainTopicOutputSchema = z.object({
-  explanation: z.string().describe('The AI-generated explanation for the topic.'),
+  explanation: z.string().describe('The AI-generated explanation for the topic, formatted in simple Markdown.'),
 });
 export type ExplainTopicOutput = z.infer<typeof ExplainTopicOutputSchema>;
 
@@ -29,7 +29,14 @@ const explainTopicPrompt = ai.definePrompt({
   name: 'explainTopicPrompt',
   input: {schema: ExplainTopicInputSchema},
   output: {schema: ExplainTopicOutputSchema},
-  prompt: `You are a helpful assistant. Explain the following syllabus topic concisely and clearly, in simple terms suitable for a university student. Make the explanation easy to understand and focus on the core concepts.
+  prompt: `You are a helpful assistant. Explain the following syllabus topic concisely and clearly, in simple terms suitable for a university student.
+Make the explanation easy to understand and focus on the core concepts.
+Please use simple Markdown for formatting:
+- Use '#' for main headings and '##' for subheadings (e.g., # Main Title, ## Sub-section).
+- Use backticks (\`) for inline code snippets (e.g., \`String name = "Java"\`).
+- Use triple backticks (\`\`\`) for code blocks, specifying the language if known (e.g., \`\`\`java ...code... \`\`\`).
+- Use bullet points (-) for lists if appropriate.
+- Ensure paragraphs are well-separated.
 
 Topic: {{{topicText}}}`,
 });
