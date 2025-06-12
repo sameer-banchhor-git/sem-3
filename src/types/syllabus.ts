@@ -38,10 +38,3 @@ export interface SyllabusPractical {
 }
 
 export type SyllabusCourse = SyllabusPaper | SyllabusPractical;
-
-// New type for structured content
-export interface HierarchicalContentNode {
-  id: string;
-  text: string;
-  children?: HierarchicalContentNode[];
-}
