@@ -21,8 +21,8 @@ export function CourseSection({ course }: CourseSectionProps) {
   const Icon = isPaper ? FileText : FlaskConical;
 
   return (
-    <Card id={sectionId} className="shadow-lg rounded-xl overflow-hidden">
-      <CardHeader className="bg-secondary/50 p-6">
+    <Card id={sectionId} className="shadow-md rounded-lg overflow-hidden"> {/* Reduced shadow and rounding */}
+      <CardHeader className="p-6"> {/* Removed custom background */}
         <CardTitle className="text-2xl font-bold font-headline flex items-center text-primary">
           <Icon className="mr-3 h-7 w-7" />
           {course.title}

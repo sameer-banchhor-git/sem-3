@@ -11,7 +11,7 @@ interface TableOfContentsProps {
 
 export function TableOfContents({ courses }: TableOfContentsProps) {
   return (
-    <Card className="sticky top-8 shadow-lg">
+    <Card className="sticky top-8 shadow-md rounded-lg"> {/* Reduced shadow and rounding */}
       <CardHeader>
         <CardTitle className="flex items-center text-xl font-headline">
           <BookOpenText className="mr-2 h-6 w-6 text-primary" />
@@ -26,17 +26,17 @@ export function TableOfContents({ courses }: TableOfContentsProps) {
                 <li key={slugify(course.title)}>
                   <Button
                     variant="ghost"
-                    className="w-full justify-start text-left h-auto py-2 px-3 transition-colors duration-200 hover:bg-accent/10 group"
+                    className="w-full justify-start text-left h-auto py-2 px-3 transition-colors duration-200 hover:bg-muted/50 group" /* Changed hover to muted/50 */
                     asChild
                   >
                     <a href={`#${slugify(course.title)}`} className="flex items-center">
                       {course.type === 'paper' ? (
-                        <FileText className="mr-2 h-5 w-5 text-primary group-hover:text-accent transition-colors duration-200" />
+                        <FileText className="mr-2 h-5 w-5 text-primary group-hover:text-primary transition-colors duration-200" /> /* Changed hover text to primary */
                       ) : (
-                        <FlaskConical className="mr-2 h-5 w-5 text-primary group-hover:text-accent transition-colors duration-200" />
+                        <FlaskConical className="mr-2 h-5 w-5 text-primary group-hover:text-primary transition-colors duration-200" /> /* Changed hover text to primary */
                       )}
-                      <span className="flex-1 group-hover:text-accent transition-colors duration-200">{course.title}</span>
-                      <ChevronRight className="ml-auto h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors duration-200" />
+                      <span className="flex-1 group-hover:text-primary transition-colors duration-200">{course.title}</span> {/* Changed hover text to primary */}
+                      <ChevronRight className="ml-auto h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors duration-200" /> {/* Changed hover text to primary */}
                     </a>
                   </Button>
                 </li>
