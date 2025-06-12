@@ -87,16 +87,16 @@ const NodeDisplay: React.FC<{ node: HierarchicalContentNode; level: number }> = 
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>{alertTitle}</AlertDialogTitle>
-            <AlertDialogDescription className="max-h-[60vh] overflow-y-auto whitespace-pre-line">
-              {isLoadingExplanation ? (
-                <div className="flex items-center justify-center py-4">
-                  <Loader2 className="mr-2 h-6 w-6 animate-spin text-primary" />
-                  <span>Generating explanation...</span>
-                </div>
-              ) : (
-                alertContent
-              )}
-            </AlertDialogDescription>
+            {isLoadingExplanation ? (
+              <div className="flex items-center justify-center py-4 text-sm text-muted-foreground">
+                <Loader2 className="mr-2 h-6 w-6 animate-spin text-primary" />
+                <span>Generating explanation...</span>
+              </div>
+            ) : (
+              <AlertDialogDescription className="max-h-[60vh] overflow-y-auto whitespace-pre-line">
+                {alertContent}
+              </AlertDialogDescription>
+            )}
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogAction onClick={() => setIsAlertOpen(false)}>Close</AlertDialogAction>
