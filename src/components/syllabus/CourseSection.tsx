@@ -1,12 +1,13 @@
+
 import type { SyllabusCourse, SyllabusPaper, SyllabusPractical } from '@/types/syllabus';
 import { slugify } from '@/lib/utils';
-import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { UnitDetails } from './UnitDetails';
-import { BookList } from './BookList';
-import { ResourceLinks } from './ResourceLinks';
+// import { BookList } from './BookList'; // Removed
+// import { ResourceLinks } from './ResourceLinks'; // Removed
 import { PracticalDetails } from './PracticalDetails';
-import { FileText, FlaskConical, ListChecks, Info } from 'lucide-react';
+import { FileText, FlaskConical, Info } from 'lucide-react';
 
 interface CourseSectionProps {
   course: SyllabusCourse;
@@ -21,8 +22,8 @@ export function CourseSection({ course }: CourseSectionProps) {
   const Icon = isPaper ? FileText : FlaskConical;
 
   return (
-    <Card id={sectionId} className="shadow-md rounded-lg overflow-hidden"> {/* Reduced shadow and rounding */}
-      <CardHeader className="p-6"> {/* Removed custom background */}
+    <Card id={sectionId} className="shadow-md rounded-lg overflow-hidden">
+      <CardHeader className="p-6">
         <CardTitle className="text-2xl font-bold font-headline flex items-center text-primary">
           <Icon className="mr-3 h-7 w-7" />
           {course.title}
@@ -36,12 +37,14 @@ export function CourseSection({ course }: CourseSectionProps) {
       </CardHeader>
       <CardContent className="p-6">
         {course.note && (
-          <CardDescription className="mb-6 p-4 border-l-4 border-accent bg-accent/10 rounded-r-md text-foreground/90 flex items-start">
+          <CardDescription className="mb-6 p-4 border-l-4 border-accent bg-accent/10 rounded-r-md text-foreground/80 flex items-start">
             <Info className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-accent" />
             <span><strong>Note:</strong> {course.note}</span>
           </CardDescription>
         )}
 
+        {/* Removed Course Outcomes section */}
+        {/*
         {isPaper && paper.courseOutcomes && paper.courseOutcomes.length > 0 && (
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-3 flex items-center font-headline text-primary">
@@ -55,17 +58,20 @@ export function CourseSection({ course }: CourseSectionProps) {
             </ul>
           </div>
         )}
+        */}
 
         {isPaper ? (
           <>
             <UnitDetails units={paper.units} />
-            <BookList books={paper.recommendedBooks} />
-            <ResourceLinks links={paper.digitalPlatforms} />
+            {/* <BookList books={paper.recommendedBooks} /> */} {/* Removed */}
+            {/* <ResourceLinks links={paper.digitalPlatforms} /> */} {/* Removed */}
           </>
         ) : (
           <PracticalDetails practical={practical} />
         )}
       </CardContent>
+      {/* Removed CardFooter */}
+      {/*
       {isPaper && paper.digitalPlatforms.length > 0 && (
          <CardFooter className="bg-muted/30 p-4 border-t">
             <p className="text-xs text-muted-foreground">
@@ -73,6 +79,7 @@ export function CourseSection({ course }: CourseSectionProps) {
             </p>
          </CardFooter>
       )}
+      */}
     </Card>
   );
 }
