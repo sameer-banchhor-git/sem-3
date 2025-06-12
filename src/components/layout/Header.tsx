@@ -15,7 +15,7 @@ export function Header() {
           <div className="flex items-center space-x-3">
             <GraduationCap size={40} className="text-primary" />
             <div>
-              <h1 className="text-3xl font-bold font-headline">Syllabus Central</h1>
+              <h1 className="text-3xl font-bold font-headline">Syllabus</h1>
               <p className="text-lg text-foreground/80">M.Sc. (CS) - THIRD SEMESTER</p>
               <ExamCountdown targetDate={examDate} />
             </div>
