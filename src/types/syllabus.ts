@@ -4,9 +4,16 @@ export interface SyllabusLink {
   url: string;
 }
 
+export interface HierarchicalContentNode {
+  text: string;
+  isCode?: boolean;
+  children?: HierarchicalContentNode[];
+}
+
 export interface SyllabusUnit {
   title: string;
-  content: string; // Original paragraph content
+  // content: string; // Original paragraph content - replaced
+  structuredContent?: HierarchicalContentNode[]; // New structured content
 }
 
 export interface SyllabusPaper {

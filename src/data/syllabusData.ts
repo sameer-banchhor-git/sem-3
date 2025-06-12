@@ -1,4 +1,5 @@
-import type { SyllabusCourse } from '@/types/syllabus';
+
+import type { SyllabusCourse, HierarchicalContentNode } from '@/types/syllabus';
 
 export const syllabusData: SyllabusCourse[] = [
   {
@@ -20,23 +21,177 @@ export const syllabusData: SyllabusCourse[] = [
     units: [
       {
         title: 'UNIT-I',
-        content: 'Introduction: History and features of Java, Difference between C, C++ & JAVA. JAVA and Internet, WWW, Web Browsers, java supports system, Java Environment. JDK, JVM, Byte code Java Programming Basics: Structure of Java program, JAVA tokens and Statements, Constants & Variables, Data types, Operators, Command line arguments. Java Statements & Arrays: if and switch statement. while, do-while and , for. Introduction to arrays, types of arrays, new operator, Strings. String class & its methods, Vectors. Classes & Objects: Specifying classes, Methods and fields, creating objects. Passing objects to methods, returning objects, static fields & methods. Constructors, Garbage collection, Overloading methods & constructors, this keyword.',
+        structuredContent: [
+          {
+            text: 'Introduction',
+            children: [
+              { text: 'History and features of Java' },
+              { text: 'Difference between C, C++ & JAVA' },
+              { text: 'JAVA and Internet, WWW, Web Browsers' },
+              { text: 'Java support system, Java Environment' },
+              { text: 'JDK, JVM, Byte code' },
+            ],
+          },
+          {
+            text: 'Java Programming Basics',
+            children: [
+              { text: 'Structure of Java program' },
+              { text: 'JAVA tokens and Statements' },
+              { text: 'Constants & Variables' },
+              { text: 'Data types' },
+              { text: 'Operators' },
+              { text: 'Command line arguments' },
+            ],
+          },
+          {
+            text: 'Java Statements & Arrays',
+            children: [
+              { text: 'if and switch statement', isCode: true },
+              { text: 'while, do-while and for loops', isCode: true },
+              { text: 'Introduction to arrays, types of arrays, new operator', isCode: true },
+              { text: 'Strings, String class & its methods', isCode: true },
+              { text: 'Vectors' },
+            ],
+          },
+          {
+            text: 'Classes & Objects',
+            children: [
+              { text: 'Specifying classes' },
+              { text: 'Methods and fields' },
+              { text: 'Creating objects' },
+              { text: 'Passing objects to methods, returning objects' },
+              { text: 'Static fields & methods' },
+              { text: 'Constructors' },
+              { text: 'Garbage collection' },
+              { text: 'Overloading methods & constructors' },
+              { text: 'this keyword', isCode: true },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT-II',
-        content: 'Inheritances: Specifying sub class, types of inheritance, visibility control: public, private, protected, package. super keyword, Overriding methods, Dynamic method dispatch, Abstract methods and classes, final methods & classes, Packages & Interfaces: Introduction to packages, naming conventions, package statement, creating packages, import statement, accessing package, use of CLASSPATH, adding class to package, hiding classes. Interface, implementing interfaces, multiple interfaces. Multithreading: Creation threads, Extending Thread class, implements Runnable interface, stopping and blocking thread, Thread life cycle, thread priorities & Thread synchronization, using Thread methods.',
+        structuredContent: [
+          {
+            text: 'Inheritance',
+            children: [
+              { text: 'Specifying sub class' },
+              { text: 'Types of inheritance' },
+              { text: 'Visibility control: public, private, protected, package', isCode: true },
+              { text: 'super keyword', isCode: true },
+              { text: 'Overriding methods' },
+              { text: 'Dynamic method dispatch' },
+              { text: 'Abstract methods and classes' },
+              { text: 'final methods & classes', isCode: true },
+            ],
+          },
+          {
+            text: 'Packages & Interfaces',
+            children: [
+              { text: 'Introduction to packages, naming conventions' },
+              { text: 'package statement, creating packages', isCode: true },
+              { text: 'import statement, accessing package', isCode: true },
+              { text: 'Use of CLASSPATH, adding class to package, hiding classes' },
+              { text: 'Interface, implementing interfaces, multiple interfaces' },
+            ],
+          },
+          {
+            text: 'Multithreading',
+            children: [
+              { text: 'Creation threads' },
+              { text: 'Extending Thread class, implements Runnable interface', isCode: true },
+              { text: 'Stopping and blocking thread' },
+              { text: 'Thread life cycle' },
+              { text: 'Thread priorities & Thread synchronization' },
+              { text: 'Using Thread methods', isCode: true },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT-III',
-        content: 'Exception Handling: Managing errors, types of errors, exceptions, syntax of exception handling code. try, catch, throw, throws and finally statements, multiple catch & nested try statements. Java Input Output: Java I/O package, Byte/Character Stream, Buffered reader / writer, File reader / writer, File Sequential / Random. Reading numeric, character & strings data from keyboard. Applet programming: Applet Vs. Application, Creating applets, life cycle, local & remote applets. <applet> tag & its attributes, adding applet to HTML file, Running applet.',
+        structuredContent: [
+          {
+            text: 'Exception Handling',
+            children: [
+              { text: 'Managing errors, types of errors, exceptions' },
+              { text: 'Syntax of exception handling code: try, catch, throw, throws and finally statements', isCode: true },
+              { text: 'Multiple catch & nested try statements', isCode: true },
+            ],
+          },
+          {
+            text: 'Java Input Output',
+            children: [
+              { text: 'Java I/O package' },
+              { text: 'Byte/Character Stream' },
+              { text: 'Buffered reader / writer' },
+              { text: 'File reader / writer' },
+              { text: 'File Sequential / Random' },
+              { text: 'Reading numeric, character & strings data from keyboard' },
+            ],
+          },
+          {
+            text: 'Applet Programming',
+            children: [
+              { text: 'Applet Vs. Application' },
+              { text: 'Creating applets, life cycle' },
+              { text: 'Local & remote applets' },
+              { text: '<APPLET> tag & its attributes', isCode: true },
+              { text: 'Adding applet to HTML file, Running applet' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT-IV',
-        content: 'Abstract Windows Toolkit (AWT): Components and Graphics, Containers, Frames and Panels, Layout Managers, Border layout, Flow layout, Grid layout, Card layout, AWT components. Event delegation Model, Event source and handler, Event categories, Listeners, Interfaces, Controls such as text box, radio buttons, checkboxes, lists, choice, command buttons, text area etc. JDBC: Java database connectivity, Types of JDBC drivers, Writing JDBC applications, Types of statement objects (Statement, PreparedStatement and CallableStatement), Types of resultset, Inserting and updating records, JDBC and AWT.',
+        structuredContent: [
+          {
+            text: 'Abstract Windows Toolkit (AWT)',
+            children: [
+              { text: 'Components and Graphics' },
+              { text: 'Containers, Frames and Panels' },
+              { text: 'Layout Managers: Border layout, Flow layout, Grid layout, Card layout' },
+              { text: 'AWT components' },
+              { text: 'Event delegation Model: Event source and handler, Event categories, Listeners, Interfaces' },
+              { text: 'Controls: text box, radio buttons, checkboxes, lists, choice, command buttons, text area etc.' },
+            ],
+          },
+          {
+            text: 'JDBC (Java Database Connectivity)',
+            children: [
+              { text: 'Types of JDBC drivers' },
+              { text: 'Writing JDBC applications' },
+              { text: 'Types of statement objects: Statement, PreparedStatement and CallableStatement', isCode: true },
+              { text: 'Types of resultset' },
+              { text: 'Inserting and updating records' },
+              { text: 'JDBC and AWT' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT-V',
-        content: 'Networking with Java: Networking basics, Sockets, port., Internet addressing, java.net – networking classes and interfaces, Implementing TCP/IP based Server and Client Servlets: Introduction Servlet API Overview, Writing and running Simple Servlet, Servlet Life cycle, Generic Servlet, HTTPServlet, ServletConfig, ServletContest, Writing Servlet to handle Get and Post methods.',
+        structuredContent: [
+          {
+            text: 'Networking with Java',
+            children: [
+              { text: 'Networking basics, Sockets, port' },
+              { text: 'Internet addressing' },
+              { text: 'java.net – networking classes and interfaces', isCode: true },
+              { text: 'Implementing TCP/IP based Server and Client' },
+            ],
+          },
+          {
+            text: 'Servlets',
+            children: [
+              { text: 'Introduction Servlet API Overview' },
+              { text: 'Writing and running Simple Servlet, Servlet Life cycle' },
+              { text: 'Generic Servlet, HTTPServlet', isCode: true },
+              { text: 'ServletConfig, ServletContest', isCode: true },
+              { text: 'Writing Servlet to handle Get and Post methods' },
+            ],
+          },
+        ],
       },
     ],
     recommendedBooks: [
@@ -70,23 +225,91 @@ export const syllabusData: SyllabusCourse[] = [
     units: [
       {
         title: 'UNIT-I',
-        content: 'Introduction of computer Graphics and its applications, Overview of Graphics systems, Video display devices, Raster scan display, Raster scan systems, video controller, Raster scan display processor, Random scan display, random scan systems, color CRT monitor, Flat panel display, Interactive input devices, Logical classification of input devices, Keyboard, mouse, Trackball and spaceball, Joysticks, Image scanner, Light pens, Graphics software, Coordinates representations, Graphics functions.',
+        structuredContent: [
+          { text: 'Introduction of computer Graphics and its applications' },
+          { text: 'Overview of Graphics systems' },
+          {
+            text: 'Video display devices',
+            children: [
+              { text: 'Raster scan display, Raster scan systems, video controller, Raster scan display processor' },
+              { text: 'Random scan display, random scan systems' },
+              { text: 'Color CRT monitor' },
+              { text: 'Flat panel display' },
+            ],
+          },
+          {
+            text: 'Interactive input devices',
+            children: [
+              { text: 'Logical classification of input devices' },
+              { text: 'Keyboard, mouse, Trackball and spaceball, Joysticks, Image scanner, Light pens' },
+            ],
+          },
+          { text: 'Graphics software' },
+          { text: 'Coordinates representations' },
+          { text: 'Graphics functions' },
+        ],
       },
       {
         title: 'UNIT-II',
-        content: 'Line drawing algorithms, DDA, Bresenham’s, Circle generating, Mid-point circle algorithm, Ellipse generating, Polynomials, Scan-line polygon fill, Boundary fill.',
+        structuredContent: [
+          { text: 'Line drawing algorithms: DDA, Bresenham’s' },
+          { text: 'Circle generating: Mid-point circle algorithm' },
+          { text: 'Ellipse generating: Polynomials' },
+          { text: 'Scan-line polygon fill' },
+          { text: 'Boundary fill' },
+        ],
       },
       {
         title: 'UNIT-III',
-        content: 'Basic transformation’s, Translation, Rotation, Scaling, Matrix representation’s & homogeneous co-ordinates, Composite transformation’s, Reflection, Two dimensional viewing, Two dimensional clipping, Line, Polygon, Curve, Text. 3D-transformation, Projection, Viewing, Clipping.',
+        structuredContent: [
+          { text: 'Basic transformations: Translation, Rotation, Scaling' },
+          { text: 'Matrix representations & homogeneous co-ordinates' },
+          { text: 'Composite transformations: Reflection' },
+          { text: 'Two dimensional viewing' },
+          { text: 'Two dimensional clipping: Line, Polygon, Curve, Text' },
+          { text: '3D-transformation, Projection, Viewing, Clipping' },
+        ],
       },
       {
         title: 'UNIT-IV',
-        content: 'Spline representation, Cubic spline, Bezier curve, Bezier surfaces, Beta spline, B-spline surfaces, B-spline curve, Hidden surfaces, Hidden lines, Z-buffer.',
+        structuredContent: [
+          {
+            text: 'Spline representation',
+            children: [
+              { text: 'Cubic spline' },
+              { text: 'Bezier curve, Bezier surfaces' },
+              { text: 'Beta spline' },
+              { text: 'B-spline surfaces, B-spline curve' },
+            ],
+          },
+          { text: 'Hidden surfaces' },
+          { text: 'Hidden lines' },
+          { text: 'Z-buffer' },
+        ],
       },
       {
         title: 'UNIT-V',
-        content: 'Fractal’s geometry Fractal generation procedure, Classification of Fractal, Fractal dimension, Fractal construction methods. Color models, XYZ, RGB, YIQ, CMY & HSV, Shading algorithms, Shading model, Illumination model, Gouraud shading, Phong shading.',
+        structuredContent: [
+          {
+            text: 'Fractals geometry',
+            children: [
+              { text: 'Fractal generation procedure' },
+              { text: 'Classification of Fractal' },
+              { text: 'Fractal dimension' },
+              { text: 'Fractal construction methods' },
+            ],
+          },
+          { text: 'Color models: XYZ, RGB, YIQ, CMY & HSV' },
+          {
+            text: 'Shading algorithms',
+            children: [
+              { text: 'Shading model' },
+              { text: 'Illumination model' },
+              { text: 'Gouraud shading' },
+              { text: 'Phong shading' },
+            ],
+          },
+        ],
       },
     ],
     recommendedBooks: [
@@ -120,24 +343,138 @@ export const syllabusData: SyllabusCourse[] = [
     units: [
       {
         title: 'UNIT - I',
-        content: 'Introduction: Introduction to Multi-user System, Emergency and history of Unix, Feature and benefits, Versions of Unix. System Structure:-Hardware requirements, Kernel and its function, introduction to System calls and Shell. File System: Feature of Unix File System, Concept of i-node table, links, commonly used commands like who, pwd, cd, mkdir, rm, ls, mv, lp, chmod, cp, grep, sed, awk, pr, lex, yacc, make, etc. Getting started (login / logout), File system management, file operation, system calls, buffer cache. Vi Editor:- Intro to text processing, command and edit mode, invoking vi, command structure, deleting and inserting line, deleting and replacing character, searching strings, yanking, running shell command, command macros, set windows, set auto indent, set number, intro to exrc file.'
+        structuredContent: [
+          {
+            text: 'Introduction',
+            children: [
+              { text: 'Introduction to Multi-user System' },
+              { text: 'Emergency and history of Unix' },
+              { text: 'Feature and benefits, Versions of Unix' },
+            ],
+          },
+          {
+            text: 'System Structure',
+            children: [
+              { text: 'Hardware requirements' },
+              { text: 'Kernel and its function' },
+              { text: 'Introduction to System calls and Shell' },
+            ],
+          },
+          {
+            text: 'File System',
+            children: [
+              { text: 'Feature of Unix File System' },
+              { text: 'Concept of i-node table, links' },
+              { text: 'Commonly used commands (e.g., who, pwd, cd, mkdir, rm, ls, mv, lp, chmod, cp, grep, sed, awk, pr, lex, yacc, make)', isCode: true },
+              { text: 'Getting started (login / logout)' },
+              { text: 'File system management, file operation, system calls, buffer cache' },
+            ],
+          },
+          {
+            text: 'Vi Editor',
+            children: [
+              { text: 'Intro to text processing' },
+              { text: 'Command and edit mode, invoking vi' },
+              { text: 'Command structure, deleting and inserting line' },
+              { text: 'Deleting and replacing character, searching strings, yanking' },
+              { text: 'Running shell command, command macros' },
+              { text: 'Set windows, set auto indent, set number, intro to exrc file' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT - II',
-        content: 'Shell Programming: Introduction to shell feature, wild card characters, i/out redirections, standard error redirection, system and user created shell variables, profile files, pipes/tee, background processing, command line arguments, command substitution, read statement, conditional execution of commands, special shell variables $ #, #?, $* etc. Shift commands, loops and decision making- for, while and until, choice making using case…esac, decision making if ….fi, using test, string comparison, numerical comparison, logical operation, using expr.'
+        structuredContent: [
+          {
+            text: 'Shell Programming',
+            children: [
+              { text: 'Introduction to shell feature, wild card characters' },
+              { text: 'I/O redirections, standard error redirection' },
+              { text: 'System and user created shell variables, profile files' },
+              { text: 'Pipes/tee, background processing' },
+              { text: 'Command line arguments, command substitution, read statement' },
+              { text: 'Conditional execution of commands' },
+              { text: 'Special shell variables ($ #, #?, $ * etc.)', isCode: true },
+              { text: 'Shift commands' },
+              { text: 'Loops and decision making: for, while and until', isCode: true },
+              { text: 'Choice making using case...esac', isCode: true },
+              { text: 'Decision making if...fi', isCode: true },
+              { text: 'Using test, string comparison, numerical comparison, logical operation, using expr', isCode: true },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT - III',
-        content: 'Introduction to Shell: Features, changing the login shell, cshrc, login, logout files, setting environment, variables, history and alias mechanism, command line arguments, redirection/appending safely, noclobber, noglob, ignore eof, directory stacks (pushd, popd), feature of other shell (rsh, vsh). Process Control: Process management, process states and transition, regions and control of process, sleep and waking, process creation, process killing, signals, system boot and init process, traps, sitting process priorities.'
+        structuredContent: [
+          {
+            text: 'Introduction to Shell (Advanced)',
+            children: [
+              { text: 'Features, changing the login shell' },
+              { text: 'cshrc, login, logout files', isCode: true },
+              { text: 'Setting environment variables' },
+              { text: 'History and alias mechanism' },
+              { text: 'Command line arguments' },
+              { text: 'Redirection/appending safely, noclobber, noglob, ignore eof', isCode: true },
+              { text: 'Directory stacks (pushd, popd)', isCode: true },
+              { text: 'Feature of other shell (rsh, vsh)', isCode: true },
+            ],
+          },
+          {
+            text: 'Process Control',
+            children: [
+              { text: 'Process management, process states and transition' },
+              { text: 'Regions and control of process' },
+              { text: 'Sleep and waking' },
+              { text: 'Process creation, process killing' },
+              { text: 'Signals' },
+              { text: 'System boot and init process', isCode: true },
+              { text: 'Traps' },
+              { text: 'Setting process priorities' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT - IV',
-        content: 'Inter-process Communication: I/O Sub system, terminal drives, disk drives, messages, shared memory, semaphores, memory management, swapping, demand paging. System Calls and Unix -C Interface: File handling calls like - access (), open(), create(), read(), write(), close(), fseek(), process control system calls like kill(), exec(), fork(), wait(), signal(), exit(), comparing stdio library and calls.'
+        structuredContent: [
+          {
+            text: 'Inter-process Communication',
+            children: [
+              { text: 'I/O Sub system, terminal drives, disk drives' },
+              { text: 'Messages, shared memory, semaphores' },
+              { text: 'Memory management, swapping, demand paging' },
+            ],
+          },
+          {
+            text: 'System Calls and Unix -C Interface',
+            children: [
+              { text: 'File handling calls: access(), open(), create(), read(), write(), close(), fseek()', isCode: true },
+              { text: 'Process control system calls: kill(), exec(), fork(), wait(), signal(), exit()', isCode: true },
+              { text: 'Comparing stdio library and calls', isCode: true },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT - V',
-        content: 'System Administration: Process and Scheduling, Security, Basic System Administration:- Adding a User, User Passwords, Delete of a User, Adding a Group, Deleting a Group, Super User, Startup and Shutdown. Advanced System Administration:-Managing Disk Space, Backup and Restore, Managing System Services. Xwindows:- Introduction to Xwindows concept'
-      }
+        structuredContent: [
+          {
+            text: 'System Administration',
+            children: [
+              { text: 'Process and Scheduling' },
+              { text: 'Security' },
+              { text: 'Basic System Administration: Adding a User, User Passwords, Delete of a User, Adding a Group, Deleting a Group, Super User, Startup and Shutdown' },
+              { text: 'Advanced System Administration: Managing Disk Space, Backup and Restore, Managing System Services' },
+            ],
+          },
+          {
+            text: 'Xwindows',
+            children: [{ text: 'Introduction to Xwindows concept' }],
+          },
+        ],
+      },
     ],
     recommendedBooks: [
       'Arnold Robbins, “Linux Programming by Examples The Fundamentals”, Pearson Education, 2Ed., 2008.',
@@ -171,24 +508,96 @@ export const syllabusData: SyllabusCourse[] = [
     units: [
       {
         title: 'UNIT - I',
-        content: 'Digital Image fundaments: Introduction, An image model, sampling & quantization, basic relationships between Pixels, imaging geometry.'
+        structuredContent: [
+          {
+            text: 'Digital Image fundamentals',
+            children: [
+              { text: 'Introduction' },
+              { text: 'An image model' },
+              { text: 'Sampling & quantization' },
+              { text: 'Basic relationships between Pixels' },
+              { text: 'Imaging geometry' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT - II',
-        content: 'Image Transforms: Properties of 2 – D Fourier transform, FFT algorithm and other separable image transforms. Walsh transforms. Hadamard, Cosine, Haar, Slant transforms, KL transforms and their properties.'
+        structuredContent: [
+          {
+            text: 'Image Transforms',
+            children: [
+              { text: 'Properties of 2 – D Fourier transform' },
+              { text: 'FFT algorithm and other separable image transforms' },
+              { text: 'Walsh transforms' },
+              { text: 'Hadamard, Cosine, Haar, Slant transforms, KL transforms and their properties' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT - III',
-        content: 'Image Enhancement: Background, enhancement by point processing, histogram processing, spatial filtering and enhancement in frequency domain, color image processing. Image filtering and restoration: degradation model, diagnolisation of circulant and block circulate matrices, Algebraic approach to restoration, inverse filtering, least mean squares and interactive restoration, geometric transformations.'
+        structuredContent: [
+          {
+            text: 'Image Enhancement',
+            children: [
+              { text: 'Background' },
+              { text: 'Enhancement by point processing, histogram processing' },
+              { text: 'Spatial filtering and enhancement in frequency domain' },
+              { text: 'Color image processing' },
+            ],
+          },
+          {
+            text: 'Image filtering and restoration',
+            children: [
+              { text: 'Degradation model' },
+              { text: 'Diagnolisation of circulant and block circulate matrices' },
+              { text: 'Algebraic approach to restoration' },
+              { text: 'Inverse filtering, least mean squares and interactive restoration' },
+              { text: 'Geometric transformations' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT - IV',
-        content: 'Image compression: Fundamentals, image compression modes, error free compression, lossy compression, image compression standards. Image segmentation: Detection of discontinuities, edge linking and boundary detection thresholding, region – oriented segmentation, use of motion in segmentation.'
+        structuredContent: [
+          {
+            text: 'Image compression',
+            children: [
+              { text: 'Fundamentals' },
+              { text: 'Image compression modes' },
+              { text: 'Error free compression, lossy compression' },
+              { text: 'Image compression standards' },
+            ],
+          },
+          {
+            text: 'Image segmentation',
+            children: [
+              { text: 'Detection of discontinuities, edge linking and boundary detection' },
+              { text: 'Thresholding' },
+              { text: 'Region – oriented segmentation' },
+              { text: 'Use of motion in segmentation' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT - V',
-        content: 'Representation and description: Various schemes for representation, boundary descriptors, and regional descrip Image reconstruction from Projections, Radon Transforms; Convolution/Filter back – Project Algorithms.'
-      }
+        structuredContent: [
+          {
+            text: 'Representation and description',
+            children: [
+              { text: 'Various schemes for representation' },
+              { text: 'Boundary descriptors' },
+              { text: 'Regional descriptors' },
+            ],
+          },
+          { text: 'Image reconstruction from Projections' },
+          { text: 'Radon Transforms' },
+          { text: 'Convolution/Filter back – Project Algorithms' },
+        ],
+      },
     ],
     recommendedBooks: [
       'Fundamentals of Digital Image Processing - A. K. Jain, Prentice Hall',
@@ -215,24 +624,155 @@ export const syllabusData: SyllabusCourse[] = [
     units: [
       {
         title: 'UNIT-I',
-        content: 'Introduction: Two views of software Developments: SSAD and OOAD, Why Object –Orientation? Object and classes, Abstraction and encapsulation, Methods and Message, Interfaces, Inheritance and Polymorphism, Access Control, The Business case for OO Developments. Object Oriented Methodologies: Object Oriented Design –Booch, Object Modeling Techniques- Rumbaugh, Object – Oriented Analysis – Coad-Yourdan, Object – Oriented Software Engineering – Ivar Jacobson,'
+        structuredContent: [
+          {
+            text: 'Introduction',
+            children: [
+              { text: 'Two views of software Developments: SSAD and OOAD' },
+              {
+                text: 'Why Object –Orientation?',
+                children: [
+                  { text: 'Object and classes' },
+                  { text: 'Abstraction and encapsulation' },
+                  { text: 'Methods and Message' },
+                  { text: 'Interfaces' },
+                  { text: 'Inheritance and Polymorphism' },
+                  { text: 'Access Control' },
+                ],
+              },
+              { text: 'The Business case for OO Developments' },
+            ],
+          },
+          {
+            text: 'Object Oriented Methodologies',
+            children: [
+              { text: 'Object Oriented Design – Booch' },
+              { text: 'Object Modeling Techniques – Rumbaugh' },
+              { text: 'Object – Oriented Analysis – Coad-Yourdan' },
+              { text: 'Object – Oriented Software Engineering – Ivar Jacobson' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT-II',
-        content: 'Unified Approach: Diagramming and Notational Techniques using the UML, UML Notation, {Analysis Diagramming Techniques.} == Introduction to all (ten) Diagram, {Design Diagramming Techniques}, Generalization/Specialization, Aggregation and composition, Association, Cardinality, Navigability, Icons, relationships and adornments. Object-Oriented Systems Development Process: Rational Unified Process, Four Major phases: Inception, Elaboration, Construction, Transition, Requirements Engineering: Problem analysis, Understanding Stockholders need, Type of requirements, Use-case Model: Writing Requirements'
+        structuredContent: [
+          {
+            text: 'Unified Approach',
+            children: [
+              { text: 'Diagramming and Notational Techniques using the UML' },
+              { text: 'UML Notation' },
+              { text: 'Analysis Diagramming Techniques (Introduction to all ten diagrams)' },
+              { text: 'Design Diagramming Techniques' },
+              { text: 'Generalization/Specialization, Aggregation and composition, Association, Cardinality, Navigability, Icons, relationships and adornments' },
+            ],
+          },
+          {
+            text: 'Object-Oriented Systems Development Process',
+            children: [
+              { text: 'Rational Unified Process' },
+              { text: 'Four Major phases: Inception, Elaboration, Construction, Transition' },
+            ],
+          },
+          {
+            text: 'Requirements Engineering',
+            children: [
+              { text: 'Problem analysis, Understanding Stockholders need' },
+              { text: 'Type of requirements' },
+              { text: 'Use-case Model: Writing Requirements' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT-III',
-        content: 'Analysis: Behavioral Analysis, Domain Analysis or Business Object Analysis, Use-case Driven Object Oriented analysis: The UML approach., Develop use-case Model, Use-case Description, Documentation, Activity Diagram, Identify the classes., Introduction to different approaches for identifying classes, “Noun Phrase” approach OR, “Conman Class Pattern” approach Or, “CRC” approach Or, Use case Driven Approach. Containment and Composition, Aggregation, Inheritance, SubTypes and IS-A Hierarchies, Association and Link Relationships, Diagramming System Events.'
+        structuredContent: [
+          {
+            text: 'Analysis',
+            children: [
+              { text: 'Behavioral Analysis' },
+              { text: 'Domain Analysis or Business Object Analysis' },
+              {
+                text: 'Use-case Driven Object Oriented analysis: The UML approach',
+                children: [
+                  { text: 'Develop use-case Model' },
+                  { text: 'Use-case Description' },
+                  { text: 'Documentation, Activity Diagram' },
+                  { text: 'Identify the classes' },
+                ],
+              },
+              {
+                text: 'Introduction to different approaches for identifying classes:',
+                children: [
+                  { text: '“Noun Phrase” approach OR' },
+                  { text: '“Conman Class Pattern” approach OR' },
+                  { text: '“CRC” approach OR' },
+                  { text: 'Use case Driven Approach' },
+                ],
+              },
+              { text: 'Containment and Composition, Aggregation, Inheritance' },
+              { text: 'SubTypes and IS-A Hierarchies' },
+              { text: 'Association and Link Relationships' },
+              { text: 'Diagramming System Events' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT-IV',
-        content: 'Design Phases: Translating Analysis Concept into Design, Optimizing classes and Objects: The Multi-tiered Architecture View, Mapping System functions to objects., Object to Object Visibility, Collaboration Diagram, Sequential Diagram, Specification Class Diagram, Specifying Object Interfaces, Designing the Data Access layer, Design User Interface layer, Designing System Interfaces, Controls and Security.'
+        structuredContent: [
+          {
+            text: 'Design Phases',
+            children: [
+              { text: 'Translating Analysis Concept into Design' },
+              { text: 'Optimizing classes and Objects: The Multi-tiered Architecture View' },
+              { text: 'Mapping System functions to objects' },
+              { text: 'Object to Object Visibility' },
+              { text: 'Collaboration Diagram' },
+              { text: 'Sequential Diagram' },
+              { text: 'Specification Class Diagram' },
+              { text: 'Specifying Object Interfaces' },
+              { text: 'Designing the Data Access layer' },
+              { text: 'Design User Interface layer' },
+              { text: 'Designing System Interfaces, Controls and Security' },
+            ],
+          },
+        ],
       },
       {
         title: 'UNIT-V',
-        content: 'Design Refinement: Designing for Extensibility, Design for reusability, Portioning class space, Checking Completeness and correctness. Persistent Object and Database Issues: The Cood Data Management Domain, Object Persistence, Object-oriented Database Management System, Object-Oriented verses Relational Database, Mapping object to Relational Data structure. Testing: Introduction to Testing Strategies, Impact of Object Orientation on Testing. Testing Business Process, Design Matrix, Discovering reusable pattern.'
-      }
+        structuredContent: [
+          {
+            text: 'Design Refinement',
+            children: [
+              { text: 'Designing for Extensibility' },
+              { text: 'Design for reusability' },
+              { text: 'Portioning class space' },
+              { text: 'Checking Completeness and correctness' },
+            ],
+          },
+          {
+            text: 'Persistent Object and Database Issues',
+            children: [
+              { text: 'The Cood Data Management Domain' },
+              { text: 'Object Persistence' },
+              { text: 'Object-oriented Database Management System' },
+              { text: 'Object-Oriented verses Relational Database' },
+              { text: 'Mapping object to Relational Data structure' },
+            ],
+          },
+          {
+            text: 'Testing',
+            children: [
+              { text: 'Introduction to Testing Strategies' },
+              { text: 'Impact of Object Orientation on Testing' },
+              { text: 'Testing Business Process' },
+              { text: 'Design Matrix' },
+              { text: 'Discovering reusable pattern' },
+            ],
+          },
+        ],
+      },
     ],
     recommendedBooks: [
       'Object Oriented Analysis and Design with Applications - Grady Booch, Benjamin/Cummings.',

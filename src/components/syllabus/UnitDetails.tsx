@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { NotebookText } from 'lucide-react';
+import { HierarchicalContentDisplay } from './HierarchicalContentDisplay'; // Import the new component
 
 interface UnitDetailsProps {
   units: SyllabusUnit[];
@@ -31,8 +32,15 @@ export function UnitDetails({ units }: UnitDetailsProps) {
               {unit.title}
             </AccordionTrigger>
             <AccordionContent>
-              <div className="text-sm leading-relaxed text-foreground/80 pt-2 pb-4 whitespace-pre-line">
-                {unit.content}
+              <div className="pt-2 pb-4">
+                {unit.structuredContent ? (
+                  <HierarchicalContentDisplay nodes={unit.structuredContent} />
+                ) : (
+                  // Fallback for any old data that might not have structuredContent
+                  <p className="text-sm leading-relaxed text-foreground/80 whitespace-pre-line">
+                    Content not available in structured format.
+                  </p>
+                )}
               </div>
             </AccordionContent>
           </AccordionItem>
