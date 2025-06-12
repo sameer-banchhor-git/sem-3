@@ -7,7 +7,7 @@ export function Footer() {
           &copy; {new Date().getFullYear()} sameer banchhor . All rights reserved.
         </p>
         <p className="text-xs mt-1">
-          Designed for illustrative purposes.
+          Slimshadow Inc.
         </p>
       </div>
     </footer>
