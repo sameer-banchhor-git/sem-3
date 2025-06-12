@@ -36,7 +36,7 @@ export function CourseSection({ course }: CourseSectionProps) {
       </CardHeader>
       <CardContent className="p-6">
         {course.note && (
-          <CardDescription className="mb-6 p-4 border-l-4 border-accent bg-accent/10 rounded-r-md text-accent-foreground/80 flex items-start">
+          <CardDescription className="mb-6 p-4 border-l-4 border-accent bg-accent/10 rounded-r-md text-foreground/90 flex items-start">
             <Info className="h-5 w-5 mr-2 mt-0.5 shrink-0 text-accent" />
             <span><strong>Note:</strong> {course.note}</span>
           </CardDescription>
