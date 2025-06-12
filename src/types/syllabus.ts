@@ -1,3 +1,4 @@
+
 export interface SyllabusLink {
   text: string;
   url: string;
@@ -5,12 +6,12 @@ export interface SyllabusLink {
 
 export interface SyllabusUnit {
   title: string;
-  content: string;
+  content: string; // Original paragraph content
 }
 
 export interface SyllabusPaper {
   type: 'paper';
-  title: string;
+  title:string;
   maxMarks: number;
   minMarks: number;
   note?: string;
@@ -21,19 +22,26 @@ export interface SyllabusPaper {
 }
 
 export interface PracticalProgram {
-  id: string; 
+  id: string;
   description: string;
 }
 
 export interface SyllabusPractical {
   type: 'practical';
   title: string;
-  maxMarks?: number; 
+  maxMarks?: number;
   minMarks?: number;
-  note?: string; 
+  note?: string;
   examinationSchemeIntro: string;
   examinationSchemeMarks: string[];
   programs: PracticalProgram[];
 }
 
 export type SyllabusCourse = SyllabusPaper | SyllabusPractical;
+
+// New type for structured content
+export interface HierarchicalContentNode {
+  id: string;
+  text: string;
+  children?: HierarchicalContentNode[];
+}
