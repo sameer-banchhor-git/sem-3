@@ -15,6 +15,7 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+
 # Expose the port your React app runs on
 EXPOSE 7860
 
